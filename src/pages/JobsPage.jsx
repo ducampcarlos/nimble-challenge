@@ -47,19 +47,18 @@ function JobsPage() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial" }}>
+  <div className="container">
+    <div className="card candidate-info">
       <h2>Candidate Information</h2>
-
-      <p><strong>UUID:</strong> {candidate.uuid}</p>
-      <p><strong>Candidate ID:</strong> {candidate.candidateId}</p>
-      <p><strong>Application ID:</strong> {candidate.applicationId}</p>
       <p><strong>Name:</strong> {candidate.firstName} {candidate.lastName}</p>
       <p><strong>Email:</strong> {candidate.email}</p>
+      <p><strong>UUID:</strong> {candidate.uuid}</p>
+      <p><strong>Candidate ID:</strong> {candidate.candidateId}</p>
+    </div>
 
-      <hr />
+    <h2>Open Positions</h2>
 
-      <h2>Open Positions</h2>
-
+    <div className="jobs-grid">
       {jobs.map((job) => (
         <JobItem
           key={job.id}
@@ -68,7 +67,9 @@ function JobsPage() {
         />
       ))}
     </div>
-  );
+  </div>
+);
+
 }
 
 export default JobsPage;

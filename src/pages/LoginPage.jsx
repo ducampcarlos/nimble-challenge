@@ -38,7 +38,8 @@ function LoginPage() {
   };
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial" }}>
+  <div className="container">
+    <div className="card" style={{ maxWidth: "400px", margin: "0 auto" }}>
       <h2>Enter your email</h2>
 
       <input
@@ -46,16 +47,17 @@ function LoginPage() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"
-        style={{ width: "300px", marginRight: "10px" }}
       />
 
       <button onClick={handleSubmit} disabled={loading}>
         {loading ? "Loading..." : "Continue"}
       </button>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
     </div>
-  );
+  </div>
+);
+
 }
 
 export default LoginPage;

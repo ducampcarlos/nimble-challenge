@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: #f9fafb;
+}
+
+/* Centered container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Card style */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Candidate info section */
+.candidate-info {
+  margin-bottom: 40px;
+}
+
+/* Grid layout */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Input styling */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Button styling */
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+button:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.error {
+  color: #f87171;
+  margin-top: 10px;
+}
+
+/* Success message */
+.success {
+  color: #4ade80;
+  margin-top: 10px;
+}

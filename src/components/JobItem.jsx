@@ -48,30 +48,26 @@ function JobItem({ job, candidate }) {
   };
 
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        padding: "15px",
-        marginBottom: "10px",
-        borderRadius: "6px",
-      }}
-    >
-      <h3>{job.title}</h3>
+    <div className="card">
+  <h3>{job.title}</h3>
 
-      <input
-        type="text"
-        placeholder="GitHub repository URL"
-        value={repoUrl}
-        onChange={(e) => setRepoUrl(e.target.value)}
-        style={{ width: "100%", marginBottom: "10px" }}
-      />
+  <input
+    type="text"
+    placeholder="GitHub repository URL"
+    value={repoUrl}
+    onChange={(e) => setRepoUrl(e.target.value)}
+  />
 
-      <button onClick={handleSubmit} disabled={loading}>
-        {loading ? "Submitting..." : "Submit"}
-      </button>
+  <button onClick={handleSubmit} disabled={loading}>
+    {loading ? "Submitting..." : "Submit"}
+  </button>
 
-      {status && <p style={{ marginTop: "8px" }}>{status}</p>}
-    </div>
+  {status && (
+    <p className={status.includes("Error") ? "error" : "success"}>
+      {status}
+    </p>
+  )}
+</div>
   );
 }
 
