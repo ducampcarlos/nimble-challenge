@@ -25,11 +25,12 @@ function JobItem({ job, candidate }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            uuid: candidate.uuid,
-            jobId: job.id,
-            candidateId: candidate.candidateId,
-            repoUrl: repoUrl,
-          }),
+              uuid: candidate.uuid,
+              jobId: job.id,
+              candidateId: candidate.candidateId,
+              applicationId: candidate.applicationId,
+              repoUrl: repoUrl,
+            }),
         }
       );
 

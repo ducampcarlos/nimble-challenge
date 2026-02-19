@@ -54,6 +54,7 @@ function JobsPage() {
       <p><strong>Email:</strong> {candidate.email}</p>
       <p><strong>UUID:</strong> {candidate.uuid}</p>
       <p><strong>Candidate ID:</strong> {candidate.candidateId}</p>
+      <p><strong>Application ID:</strong> {candidate.applicationId}</p>
     </div>
 
     <h2>Open Positions</h2>
