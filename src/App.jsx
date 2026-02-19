@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const email = "TU_EMAIL_AQUI";
+  const email = "ducampcarlos@gmial.com";
 
   useEffect(() => {
     const init = async () => {
