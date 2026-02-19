@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import JobItem from "../components/JobItem";
 
@@ -13,9 +13,13 @@ function JobsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const handleBack = () => {
+    navigate("/", { replace: true, state: null });
+  };
+
   useEffect(() => {
     if (!candidate) {
-      navigate("/");
+      navigate("/", { replace: true });
       return;
     }
 
@@ -47,30 +51,34 @@ function JobsPage() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-  <div className="container">
-    <div className="card candidate-info">
-      <h2>Candidate Information</h2>
-      <p><strong>Name:</strong> {candidate.firstName} {candidate.lastName}</p>
-      <p><strong>Email:</strong> {candidate.email}</p>
-      <p><strong>UUID:</strong> {candidate.uuid}</p>
-      <p><strong>Candidate ID:</strong> {candidate.candidateId}</p>
-      <p><strong>Application ID:</strong> {candidate.applicationId}</p>
+    <div className="container">
+
+      <button onClick={handleBack} className="back-button">
+        ← Back
+      </button>
+
+      <div className="card candidate-info">
+        <h2>Candidate Information</h2>
+        <p><strong>Name:</strong> {candidate.firstName} {candidate.lastName}</p>
+        <p><strong>Email:</strong> {candidate.email}</p>
+        <p><strong>UUID:</strong> {candidate.uuid}</p>
+        <p><strong>Candidate ID:</strong> {candidate.candidateId}</p>
+        <p><strong>Application ID:</strong> {candidate.applicationId}</p>
+      </div>
+
+      <h2>Open Positions</h2>
+
+      <div className="jobs-grid">
+        {jobs.map((job) => (
+          <JobItem
+            key={job.id}
+            job={job}
+            candidate={candidate}
+          />
+        ))}
+      </div>
     </div>
-
-    <h2>Open Positions</h2>
-
-    <div className="jobs-grid">
-      {jobs.map((job) => (
-        <JobItem
-          key={job.id}
-          job={job}
-          candidate={candidate}
-        />
-      ))}
-    </div>
-  </div>
-);
-
+  );
 }
 
 export default JobsPage;

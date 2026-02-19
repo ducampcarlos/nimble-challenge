@@ -74,3 +74,17 @@ button:disabled {
   color: #4ade80;
   margin-top: 10px;
 }
+
+.back-button {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #222;
+}
